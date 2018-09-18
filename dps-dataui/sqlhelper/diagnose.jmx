@@ -65,12 +65,12 @@
           <collectionProp name="Arguments.arguments">
             <elementProp name="ip" elementType="Argument">
               <stringProp name="Argument.name">ip</stringProp>
-              <stringProp name="Argument.value">47.97.42.87</stringProp>
+              <stringProp name="Argument.value">${__getConfiguration(${__getEnv(JMETER_HOME)}/config/env.properties,server)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="port" elementType="Argument">
               <stringProp name="Argument.name">port</stringProp>
-              <stringProp name="Argument.value">8080</stringProp>
+              <stringProp name="Argument.value">${__getConfiguration(${__getEnv(JMETER_HOME)}/config/env.properties,dataui_port)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="type_1" elementType="Argument">
@@ -142,6 +142,16 @@
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="script">log.info(&quot;${knowledge_id}&quot;);</stringProp>
           </BeanShellPostProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
           <hashTree/>
         </hashTree>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
